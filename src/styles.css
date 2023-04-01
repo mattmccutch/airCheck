@@ -1,0 +1,58 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+main {
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.airdrop-title {
+    cursor: pointer;
+    display: block;
+    font-size: 1.2em;
+    padding: 10px;
+    background-color: #efefef;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.airdrop-toggler:checked~.airdrop-steps {
+    display: block;
+}
+
+.airdrop-steps {
+    display: none;
+    list-style: none;
+}
+
+.airdrop-steps li {
+    margin-bottom: 10px;
+}
+
+.airdrop-steps label {
+    cursor: pointer;
+    display: block;
+    padding: 5px;
+    background-color: #f9f9f9;
+    border-left: 3px solid ccc;
+    transition: all 0.3s ease;
+}
+
+.airdrop-steps input[type="checkbox"]:checked+label {
+    border-left-color: #28a745;
+    text-decoration: line-through;
+    color: #999;
+}
