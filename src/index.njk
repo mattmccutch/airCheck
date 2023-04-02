@@ -9,20 +9,21 @@
 <body>
   <main>
     <ul id="airdrops-list">
-      {% for airdrop in airdrops %}
+     {% for airdrop in airdrops %}
+  <li>
+    <input type="checkbox" id="airdrop-{{ loop.index }}" class="airdrop-toggler" hidden>
+    <label for="airdrop-{{ loop.index }}" class="airdrop-title">{{ airdrop.name }}</label>
+    <button class="show-steps-btn" onclick="toggleSteps(event, this)">Show Steps</button>
+    <ul class="airdrop-steps">
+      {% for step in airdrop.steps %}
         <li>
-          <input type="checkbox" id="airdrop-{{ loop.index }}" class="airdrop-toggler" hidden>
-          <label for="airdrop-{{ loop.index }}" class="airdrop-title">{{ airdrop.name }}</label>
-          <ul class="airdrop-steps">
-            {% for step in airdrop.steps %}
-              <li>
-                <input type="checkbox" id="step-{{ loop.index }}-{{ loop.parent.index }}" hidden>
-                <label for="step-{{ loop.index }}-{{ loop.parent.index }}">{{ step }}</label>
-              </li>
-            {% endfor %}
-          </ul>
+          <input type="checkbox" id="step-{{ loop.index }}-{{ loop.parent.index }}" hidden>
+          <label for="step-{{ loop.index }}-{{ loop.parent.index }}">{{ step }}</label>
         </li>
       {% endfor %}
+    </ul>
+  </li>
+{% endfor %}
     </ul>
   </main>
 </body>

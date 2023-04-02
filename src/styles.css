@@ -1,58 +1,61 @@
+/* styles.css */
 * {
-    box-sizing: border-box;
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
 }
 
 main {
-    background-color: white;
-    padding: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+#airdrops-list {
+    list-style-type: none;
+    width: 60%;
+    padding: 1rem;
+    background-color: #ffffff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+#airdrops-list li {
+    border: 1px solid #ccc;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 5px;
+    position: relative;
 }
 
 .airdrop-title {
     cursor: pointer;
-    display: block;
-    font-size: 1.2em;
-    padding: 10px;
-    background-color: #efefef;
-    color: #333;
-    margin-bottom: 5px;
-}
-
-.airdrop-toggler:checked~.airdrop-steps {
-    display: block;
 }
 
 .airdrop-steps {
     display: none;
-    list-style: none;
+    list-style-type: none;
+    padding-left: 1rem;
 }
 
-.airdrop-steps li {
-    margin-bottom: 10px;
-}
-
-.airdrop-steps label {
-    cursor: pointer;
+.show-steps .airdrop-steps {
     display: block;
-    padding: 5px;
-    background-color: #f9f9f9;
-    border-left: 3px solid ccc;
-    transition: all 0.3s ease;
 }
 
-.airdrop-steps input[type="checkbox"]:checked+label {
-    border-left-color: #28a745;
-    text-decoration: line-through;
-    color: #999;
+.show-steps-btn {
+    background-color: #007bff;
+    border: none;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    cursor: pointer;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
 }
